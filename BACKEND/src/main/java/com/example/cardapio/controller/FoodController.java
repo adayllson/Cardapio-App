@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 //import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ public class FoodController {
     @Autowired
     private FoodRepository repository;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data){
         Food fooData = new Food(data);
@@ -31,6 +33,7 @@ public class FoodController {
         return;
     }
     
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public Stream<Object> getAll(){
 
