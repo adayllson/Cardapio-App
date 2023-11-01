@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useFoodDataMutate } from "../../hooks/useFoodDataMutate";
 import { FoodData } from "../../inteface/FoodData";
 
+import "./create-modal.css"
+
 interface InputProps {
     label: string,
     value: string | number,
